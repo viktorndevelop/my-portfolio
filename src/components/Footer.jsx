@@ -1,11 +1,18 @@
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="border-t border-slate-800 py-12 px-4 text-center">
-      <p className="text-slate-500 mb-4">© 2026 Viktor Nosenko. Зроблено з любов'ю на MacBook Pro 2012.</p>
-      <div className="flex justify-center gap-6">
-        <a href="https://github.com/viktorndevelop" className="text-slate-400 hover:text-white">GitHub</a>
-        <a href="mailto:твій-email@example.com" className="text-slate-400 hover:text-white">Email</a>
-        <a href="#" className="text-slate-400 hover:text-white">Telegram</a>
+    <footer className="border-t border-slate-900 bg-bg-main py-12 px-6">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="text-slate-500 text-sm">
+          © {currentYear} VN.dev — Зроблено на MacBook Pro 2012
+        </div>
+        
+        <div className="flex gap-8 text-sm font-medium text-slate-400">
+          <a href="mailto:viktornosenko@example.com" className="hover:text-white transition">Email</a>
+          <a href="https://t.me/your_username" className="hover:text-white transition">Telegram</a>
+          <a href="https://github.com/viktorndevelop" className="hover:text-white transition">GitHub</a>
+        </div>
       </div>
     </footer>
   );
