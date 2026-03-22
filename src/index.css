@@ -1,1 +1,55 @@
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@layer base {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  /* Затримки для черговості появи */
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-400 { animation-delay: 0.4s; }
+}
+
+@theme {
+  /* Твої фірмові кольори */
+  --color-brand-primary: #22d3ee;    /* Яскравий ціан */
+  --color-brand-secondary: #3b82f6;  /* Насичений синій */
+  --color-brand-accent: #f472b6;     /* Рожевий акцент */
+  
+  /* Кольори фону */
+  --color-bg-main: #0f172a;          /* Глибокий темно-синій */
+  --color-bg-card: #1e293b;          /* Колір карток */
+  
+  /* Шрифти */
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+}
+
+/* Анімація мерехтіння (shimmer), яку ми додавали раніше */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
